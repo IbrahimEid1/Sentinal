@@ -92,7 +92,7 @@ const LoginForm = () => {
             className={
               isPending
                 ? "bg-gray-500 text-white w-full h-10 flex items-center justify-center shadow-2xl rounded-xl  hover:bg-gray-800 cursor-pointer"
-                : "  text-white w-full h-10 flex items-center justify-center shadow-2xl  cursor-pointer opacity-90 hover:opacity-100 transition-opacity p-0.5 bg-black rounded-xl bg-linear-to-r from-[#1411d2] to-[#000000] active:scale-95  hover:bg-blue-800  "
+                : "  text-white w-full h-10 flex items-center justify-center shadow-2xl  cursor-pointer opacity-90 hover:opacity-100 transition-opacity p-0.5 bg-black rounded-xl bg-linear-to-r from-[#1411d2] to-[#000000] active:opacity-80  hover:bg-blue-800  "
             }
             disabled={isPending}
           >
