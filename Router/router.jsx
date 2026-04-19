@@ -5,6 +5,8 @@ import Home from "../pages/Home";
 import Login from "../Auth/Login";
 import Shop from "../pages/shop";
 import PageTransition from "../src/components/Layout/PageTransition";
+import ScrollToTop from "../src/components/ScrollToTop";
+
 
 const AnimatedRoutes = () => {
   const location = useLocation();
@@ -42,6 +44,8 @@ const AnimatedRoutes = () => {
 
 const Router = () => (
   <BrowserRouter>
+            <ScrollToTop/>
+
     <AnimatedRoutes />
   </BrowserRouter>
 );

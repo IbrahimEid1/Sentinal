@@ -3,6 +3,7 @@ import { NavLink } from "react-router"; // Use -dom for web
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
+  { label: "Home", to: "/" },
   { label: "Products", to: "/shop" },
   { label: "Features", to: "/features" },
   { label: "Solutions", to: "/solutions" },
@@ -51,7 +52,6 @@ const Bar = ({ open, rotation, translateY, opacity = 1 }) => (
     transition={{ duration: 0.3, ease: "easeInOut" }}
   />
 );
-
 const CustomNavLink = ({ to, label, onClick, className = "" }) => (
   <NavLink
     to={to}
@@ -67,7 +67,6 @@ const CustomNavLink = ({ to, label, onClick, className = "" }) => (
 // --- Main Component ---
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-
   return (
     <section className="w-full mt-5">
       <div className="flex justify-between items-center max-w-[90%] mx-auto h-10">
@@ -106,7 +105,7 @@ const Navbar = () => {
             <CustomNavLink to="/login" label="Login" />
           </motion.div>
           <motion.div whileHover={{ y: -1 }} whileTap={{ opacity: 0.9 }}>
-            <NavLink to="/signup" className="px-4 py-2 rounded-2xl bg-[#0056D2] text-white block">
+            <NavLink to="/login" className="px-4 py-2 rounded-2xl bg-[#0056D2] text-white block">
               Sign Up
             </NavLink>
           </motion.div>
@@ -136,7 +135,7 @@ const Navbar = () => {
             exit="exit"
           >
             <nav className="flex flex-col items-center gap-4 py-6">
-              {[...navLinks, { label: "Login", to: "/login" }].map((link, i) => (
+              {[navLinks, { label: "Login", to: "/login" }].map((link, i) => (
                 <motion.div
                   key={link.to}
                   custom={i}

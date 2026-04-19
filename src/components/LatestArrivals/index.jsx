@@ -36,8 +36,7 @@ const SkeletonCard = () => (
 
 // ── Main Component ──────────────────────────────────────────────────────────
 
-const LatestArrivels = () => {
-  const { data, isPending } = useFindProducts();
+const LatestArrivels = ({data , isPending}) => {
 
   return (
     <section className="w-full min-h-screen py-16 bg-white">
@@ -79,7 +78,7 @@ const LatestArrivels = () => {
                   <div className="flex flex-col gap-2">
                     <div className="flex w-full justify-between items-start">
                       <h6 className="text-lg font-bold text-gray-800 line-clamp-1">{product.Title}</h6>
-                      <p className="text-[#0056D2] font-bold">${product.price}</p>
+                      <p className="text-[#0056D2] font-bold">${product.rice}</p>
                     </div>
                     
                     <div className="flex items-center gap-2 text-sm text-gray-500">

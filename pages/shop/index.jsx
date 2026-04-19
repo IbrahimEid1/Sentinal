@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Navbar from "../../src/components/Layout/Navbar";
 import SearchBar from "../../src/components/UI/InputSearch";
 import LatestArrivels from "../../src/components/LatestArrivals";
+import useFindProducts from "../../hooks/useFindProducts";
 
 const categories = [
   { id: "network", label: "Network Security", count: 12 },
@@ -18,13 +19,16 @@ const securityOptions = [
 ];
 
 const Shop = () => {
-  const [activeCategory, setActiveCategory] = useState("surveillance");
+  
+  const [activeCategory, setActiveCategory] = useState("network");
   const [security, setSecurity] = useState({
     standard: false,
     enterprise: true,
     military: false,
   });
   const [priceMax, setPriceMax] = useState(8500);
+  const { data , isPending } = useFindProducts(activeCategory);
+console.log(activeCategory);
 
   return (
     <motion.div
@@ -129,8 +133,9 @@ const Shop = () => {
 
         {/* Product grid placeholder — extend when ready */}
         <div className="min-h-[400px] flex-1 bg-white p-6" />
-        <LatestArrivels/>
-        
+        {
+          activeCategory ? <LatestArrivels data={data} isPending={isPending} /> : null
+        }
       </main>
     </motion.div>
   );

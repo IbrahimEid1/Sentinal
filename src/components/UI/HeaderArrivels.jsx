@@ -1,7 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
-
+import { useNavigate } from "react-router";
 const HeaderArrivels = () => {
+  const navigate = useNavigate()
   return (
     <div className="flex flex-col max-w-[91%] mx-auto md:flex-row justify-between items-start md:items-end gap-4">
       <div className="space-y-2">
@@ -23,9 +24,11 @@ const HeaderArrivels = () => {
           Our most advanced protection units just released.
         </motion.p>
       </div>
-      <motion.button
+      <motion.button 
+      onClick={()=>navigate("/shop")}
         whileHover={{ x: 5 }}
         className="text-[#0056D2] underline cursor-pointer font-semibold flex items-center gap-1"
+
       >
         Browse All Products
       </motion.button>
